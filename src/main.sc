@@ -47,14 +47,10 @@ theme: /
             q: * ($socks/$trousers) *
             script:
                 $session.chosenClothes = getClothesChoice($parseTree);
-                log("AAAAA "+getClothesChoice($parseTree))
+                log("My log: "+getClothesChoice($parseTree))
             go!: /HowMany
         
         
-        state: LocalCatchAll
-            event: noMatch
-            a: You named the clothes, which we don't have at the moment. Please, can you reformulate your answer?
-            go!: ..
             
             
     state: HowMany
@@ -90,3 +86,4 @@ theme: /
     state: Match
         event!: match
         a: {{$context.intent.answer}}
+
