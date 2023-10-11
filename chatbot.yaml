@@ -2,6 +2,9 @@ name: basic-starter-bot
 
 entryPoint: main.sc
 
+injector:
+    botName: lo-fi girl
+
 botEngine: v2
 language: en
 
