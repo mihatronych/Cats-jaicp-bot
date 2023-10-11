@@ -13,7 +13,7 @@ theme: /
     state: Start
         q!: *start
         q!: * $hello *
-        q: * (cancel/~stop) * || fromState = /SuggestClothes
+        q: * (cancel/stop) * || fromState = /SuggestClothes
         script:
             $temp.botName = capitalize($injector.botName)
         random:
@@ -27,6 +27,7 @@ theme: /
                 imageUrl: "https://images.squarespace-cdn.com/content/v1/55c8073fe4b02a74ffe18e48/1601518406356-RAN4D0OU7WO3A2XQQE12/Lofi+Cali+Girl+Meme+post.jpg?format=1000w", 
                 text: "This is lo-fi girl-bot" })
         go!: /SuggestClothes
+    
     
     state: SuggestClothes || modal = true
         random:
@@ -50,8 +51,9 @@ theme: /
                 log("My log: "+getClothesChoice($parseTree))
             go!: /HowMany
         
-        
-            
+        state: CatchAll
+            event!: noMatch
+            go!:/Start
             
     state: HowMany
         a: How many do you want?

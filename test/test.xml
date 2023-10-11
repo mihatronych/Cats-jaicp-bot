@@ -1,2 +1,8 @@
 <test>
+    <test-case>
+        <q>/start</q>
+        <a state="/Start"/>
+        <a state="/SuggestClothes"/>
+        <a state="/SuggestClothes"/>
+    </test-case>
 </test>    
